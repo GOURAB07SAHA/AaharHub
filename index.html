@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AaharHub</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+    
+        
+        <div class="logo">
+            <img src="C:\Users\Gourab Saha\Pictures\Screenshots\Screenshot 2024-08-18 202731.png" alt="AaharHub Logo">
+        </div>
+
+        <section id="your-orders">
+            <h2>Your Orders</h2>
+            <div id="orders-list">
+                <!-- Orders will be dynamically added here -->
+            </div>
+        </section>
+
+        
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#recipes">Recipes</a></li>
+                <li><a href="#order">Order</a></li>
+                <li><a href="#order-form-modal">Book</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+        <div id="search-container">
+            <input type="text" id="search-input" placeholder="Search for recipes...">
+            <button onclick="searchRecipes()">Search</button>
+        </div>
+
+
+        <header>
+            
+            <div id="coin-display">Coins: 0</div>
+        </header>
+        
+    </header>
+
+    <section id="home">
+        <h2>Mom's Recipes, Anytime!</h2>
+        <p>Explore our collection of recipes and culinary tips.</p>
+    </section>
+
+
+    <section id="recipes">
+        <h2>Our Recipes</h2>
+       <p><p></p></p>
+            <div class="recipe">
+            <img src="https://i0.wp.com/www.lipstickblogger.com/wp-content/uploads/2017/01/Spaghetti_1-1024x1024.jpg?resize=801,801" alt="Spaghetti Carbonara">
+            <h3>Spaghetti Carbonara</h3>
+            <p>A classic Italian dish made with eggs, cheese, pancetta, and pepper.</p>
+            <button onclick="openOrderForm('Chicken Alfredo')">Order Now</button>
+        </div>
+        <div class="recipe">
+            <img src="https://www.tasteofhome.com/wp-content/uploads/2018/01/Chicken-Mushroom-Alfredo_exps167070_ESC3139121B04_03_5bC_RMS-2.jpg" alt="Chicken Alfredo">
+            <h3>Chicken Alfredo</h3>
+            <p>Rich and creamy Alfredo sauce tossed with tender chicken and fettuccine.</p>
+            <button onclick="openOrderForm('Chicken Alfredo')">Order Now</button>
+        </div>
+        <div class="recipe">
+            <img src="https://www.crunchycreamysweet.com/wp-content/uploads/2021/01/vegetarian-stir-fry-feat.jpg" alt="Vegetable Stir Fry">
+            <h3>Vegetable Stir Fry</h3>
+            <p>A colorful mix of fresh vegetables sautéed in a savory soy sauce.</p>
+            <button onclick="openOrderForm('Vegetable Stir Fry')">Order Now</button>
+        </div>
+    <div class="recipe">
+        <img src="https://www.thewholesomedish.com/wp-content/uploads/2019/06/The-Best-Classic-Tacos-550.jpg" alt="Tacos">
+        <h3>Tacos</h3>
+        <p>Mexican-style tacos filled with seasoned meat, fresh vegetables, and cheese.</p>
+        <button onclick="openOrderForm('Tacos')">Order Now</button>
+    </div>
+    <div class="recipe">
+        <img src="https://lindseyeatsla.com/wp-content/uploads/2021/10/Lindseyeats_Classic_Caesar_Salad-2.jpg" alt="Caesar Salad">
+        <h3>Caesar Salad</h3>
+        <p>Crisp romaine lettuce, croutons, and Parmesan tossed in Caesar dressing.</p>
+        <button onclick="openOrderForm('Caesar Salad')">Order Now</button>
+    </div>
+    <div class="recipe">
+        <img src="https://cdn.loveandlemons.com/wp-content/uploads/2019/09/margherita-pizza-1080x1080.jpg" alt="Margherita Pizza">
+        <h3>Margherita Pizza</h3>
+        <p>Classic pizza topped with fresh tomatoes, mozzarella, and basil.</p>
+        <button onclick="openOrderForm('Margherita Pizza')">Order Now</button>
+    </div>
+    <!-- Hidden Recipes (Initially Hidden) -->
+<div class="recipe hidden">
+    <img src="https://i.redd.it/5keror5w0bz01.jpg" alt="Cheeseburger">
+    <h3>Cheese Burger</h3>
+    <p>Juicy beef patty topped with melted cheese, lettuce, and tomato, served on a toasted bun.</p>
+    <button onclick="openOrderForm('Cheeseburger')">Order Now</button>
+</div>
+<div class="recipe hidden">
+    <img src="https://www.yellowblissroad.com/wp-content/uploads/2018/01/Penne-Pasta-Primavera-fb.jpg" alt="Pasta Primavera">
+    <h3>Pasta Primavera</h3>
+    <p>Fresh vegetables and pasta tossed in a light garlic and olive oil sauce.</p>
+    <button onclick="openOrderForm('Pasta Primavera')">Order Now</button>
+</div>
+<div class="recipe hidden">
+    <img src="https://th.bing.com/th/id/R.95f07291f6fcf3029007fd58320ea888?rik=b2%2bAUCQO0nGuUA&riu=http%3a%2f%2fshujisushi.com.au%2fimages%2fVegetarian-Sushi-Platter-1467011210JMl7L.jpg&ehk=W%2fFGe5Avlbn8OY3%2bZdaQlrHq3ECplY8kro0hSReDqgM%3d&risl=&pid=ImgRaw&r=0" alt="Sushi Platter">
+    <h3>Sushi Platter</h3>
+    <p>An assortment of fresh sushi rolls including tuna, salmon, and avocado rolls.</p>
+    <button onclick="openOrderForm('Sushi Platter')">Order Now</button>
+</div>
+ <!-- See More Button -->
+ <div id="see-more-container">
+    <button id="see-more-button" onclick="showMoreRecipes()">See More Recipes</button>
+</div>
+</section>
+
+
+
+<section id="coupons">
+    <h2>Apply Your Coupon Code</h2>
+    <form id="coupon-form">
+        <label for="coupon-code">Enter Coupon Code:</label>
+        <input type="text" id="coupon-code" placeholder="Enter your code here">
+        <button type="submit">Apply Coupon</button>
+    </form>
+    <div id="coupon-result"></div>
+    
+    <h3>Available Coupons</h3>
+    <ul id="available-coupons">
+        <li><strong>SAVE10</strong>: Get 10% off your order</li>
+        <li><strong>FREESHIP</strong>: Free shipping on orders over 499</li>
+        <li><strong>AUGUST20</strong>: 20% off on all items this August</li>
+    </ul>
+</section>
+
+
+
+
+<section id="order">
+    <h2>Order Your Favorite Dish</h2>
+    <form id="order-form" onsubmit="submitOrder(event)">
+        <label for="dish">Select a Dish:</label>
+        <select id="dish" name="dish" required>
+            <option value="Select">Select</option>
+            <option value="Spaghetti Carbonara">Spaghetti Carbonara</option>
+            <option value="Chicken Alfredo">Chicken Alfredo</option>
+            <option value="Vegetable Stir Fry">Vegetable Stir Fry</option>
+            <option value="Tacos">Tacos</option>
+            <option value="Caesar Salad">Caesar Salad</option>
+            <option value="Margherita Pizza">Margherita Pizza</option>
+            <option value="Cheeseburger">Cheeseburger</option>
+            <option value="Pasta Primavera">Pasta Primavera</option>
+            <option value="Sushi Platter">Sushi Platter</option>
+            <!-- Add more options as needed -->
+        </select>
+        
+        <label for="name">Your Name:</label>
+        <input type="text" id="name" name="name" required>
+        
+        <label for="address">Delivery Address:</label>
+        <input type="text" id="address" name="address" required>
+        
+        <label for="phone">Phone Number:</label>
+        <input type="tel" id="phone" name="phone" required>
+        <!-- Payment Method Selection -->
+        <h3>Payment Method</h3>
+        <label for="payment-method">Choose Payment Method:</label>
+        <select id="payment-method" name="payment-method" onchange="togglePaymentFields()" required>
+            <option value="card">Credit/Debit Card</option>
+            <option value="upi">UPI</option>
+            <option value="gpay">Google Pay (GPay)</option>
+            <option value="phonepe">PhonePe</option>
+        </select>
+
+        <!-- Card Payment Fields -->
+        <div id="card-payment-fields">
+            <label for="card-name">Name on Card:</label>
+            <input type="text" id="card-name" name="card-name">
+
+            <label for="card-number">Card Number:</label>
+            <input type="text" id="card-number" name="card-number">
+
+            <label for="expiry-date">Expiry Date:</label>
+            <input type="text" id="expiry-date" name="expiry-date" placeholder="MM/YY">
+
+            <label for="cvv">CVV:</label>
+            <input type="text" id="cvv" name="cvv">
+        </div>
+
+        <!-- UPI Payment Fields -->
+        <div id="upi-payment-fields" style="display: none;">
+            <label for="upi-id">UPI ID:</label>
+            <input type="text" id="upi-id" name="upi-id" placeholder="your-upi-id@bank">
+        </div>
+        <!-- GPay Payment Fields -->
+        <div id="gpay-payment-fields" style="display: none;">
+            <p>Please use the following GPay ID to complete your payment:</p>
+            <p><strong>your-gpay-id@bank</strong></p>
+            <p>Scan the QR code below to pay with Google Pay (GPay):</p>
+            <img src="C:\Users\Gourab Saha\Downloads\GooglePay_QR[1].png" alt="Google Pay QR Code" width="200">
+        </div>
+
+        <!-- PhonePe Payment Fields -->
+        <div id="phonepe-payment-fields" style="display: none;">
+            <p>Please use the following PhonePe ID to complete your payment:</p>
+            <p><strong>your-phonepe-id@bank</strong></p>
+            <p>Scan the QR code below to pay with PhonePe:</p>
+            <img src="C:\Users\Gourab Saha\Downloads\PhonePeQR_Central Bank Of India - 69061[1].png" alt="PhonePe QR Code" width="200">
+        </div>
+
+        <button type="submit">Place Order</button>
+        </form>
+</section>
+
+    
+    <!-- Order Form Modal -->
+<div id="order-form-modal" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeOrderForm()">&times;</span>
+        <h2>BOOK A COOK NEAR YOU</h2>
+        <form id="order-form">
+            <label for="Dishes">Dishes:</label>
+            <input type="text" id="Dishes" name="Dishes" readonly>
+            
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="address">Address:</label>
+            <input type="text" id="address" name="address" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="Number of People">Number of People:</label>
+            <input type="tel" id="Number of People" name="Number of People" required>
+
+            <label for="phone">Phone:</label>
+            <input type="tel" id="phone" name="phone" required>
+
+            <button type="submit">Place Order</button>
+        </form>
+    </div>
+</div>
+<section id="contribute-dish">
+    <h2>Contribute Your Dish(You will get 100rs/dish you contribute)</h2>
+    <form id="contribute-form" onsubmit="submitDish(event)">
+        <label for="dish-name">Dish Name:</label>
+        <input type="text" id="dish-name" name="dish-name" required>
+
+        <label for="contributor-name">Your Name:</label>
+        <input type="text" id="contributor-name" name="contributor-name" required>
+
+        <label for="ingredients">Ingredients (separated by commas):</label>
+        <textarea id="ingredients" name="ingredients" required></textarea>
+
+        <label for="instructions">Instructions:</label>
+        <textarea id="instructions" name="instructions" required></textarea>
+
+        <label for="dish-video">Upload a Video:</label>
+        <input type="file" id="dish-video" name="dish-video" accept="video/*" required>
+
+        <button type="submit">Submit Recipe</button>
+    </form>
+</section>
+
+<section id="clicker-game">
+    <h2>Click to Earn Coins!</h2>
+    <button id="click-button">Click Me!</button>
+    <p>You have earned <span id="coins-earned">0</span> coins.</p>
+</section>
+
+
+
+    <section id="about">
+        <h2>About Us</h2>
+        <p>
+            Welcome to AaharHub, your go-to destination for delicious and easy-to-make recipes that bring the joy of cooking right into your home. Our mission is to inspire culinary creativity by providing a wide array of recipes that cater to every taste and dietary preference.
+        </p>
+        <p>
+            Whether you’re a seasoned chef or a kitchen novice, our carefully curated recipes are designed to guide you through every step, ensuring that every dish you prepare is a success. From classic comfort foods to exotic international dishes, we believe that cooking should be a fun and rewarding experience for everyone.
+        </p>
+        <p>
+            Our team of passionate food enthusiasts is dedicated to sharing their love of food with you. We source the freshest ingredients and test each recipe multiple times to make sure it’s foolproof. Our goal is to help you create memorable meals that bring family and friends together.
+        </p>
+        <p>
+            At AaharHub, we’re more than just a recipe site; we’re a community. We encourage you to share your cooking experiences, tips, and feedback with us. Join us on our journey to make the world a more delicious place, one recipe at a time.
+        </p>
+        <p>
+            Thank you for visiting, and happy cooking!
+        </p>
+    </section>
+
+    <section id="contact">
+        <h2>Contact Us</h2>
+        <form action="#">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" required></textarea>
+
+            <button type="submit">Send</button>
+        </form>
+    </section>
+   
+    
+
+    
+<footer>
+    <p>&copy; AaharHub</p>
+</footer>
+<!-- Include this at the bottom of the body tag -->
+<script src="script.js"></script>
+
+</body>
+</html>
+
+
